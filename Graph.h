@@ -9,7 +9,7 @@ class Graph
 public:
     Graph() = default;
     Graph(int V);
-    virtual addEdge(int u, int v, int weight) = 0;
+    virtual addEdge(int u, int v) = 0;
 
 protected:
     int V; // number of nodes in the Graph
