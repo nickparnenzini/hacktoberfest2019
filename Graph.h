@@ -13,6 +13,7 @@ public:
     Graph() = default;
     Graph(int V);	
 	void BFS();
+	void DFS();
 	
 protected:
     virtual addEdge(int u, int v) = 0;
@@ -22,6 +23,7 @@ protected:
 	
 private:
     void BFSUtil(int src);
+	void DFSUtil(int src, std::vector<bool>& visited, std::vector<int>& visited_nodes);
 };
 
 #endif

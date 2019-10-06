@@ -10,6 +10,16 @@ void Graph::BFS() {
     BFSUtil(0);	
 }
 
+void Graph::DFS() {
+	std::vector<int> visited_nodes;
+	std::vector<bool> visited(V, false);
+	for (int i = 0; i < V; ++i) {
+		if (!visited[i]) {
+			DFSUtil(i, visited, visited_nodes);
+		}
+	}
+}
+
 void Graph::BFSUtil(int src) {
 	std::vector<int> visited_nodes;	
     std::queue<int> q;	
@@ -33,5 +43,15 @@ void Graph::BFSUtil(int src) {
 	for (auto elem : visited_nodes) {
 		std::cout << elem << " ";
 	}
+}
+
+void Graph::DFSUtil(int src, std::vector<bool>& visited, std::vector<int>& visited_nodes) {
+    visited[src] = true;
+	visited_nodes.push_back(src);
+    for (auto it = adj_list[src].begin(); it != adj_list[src].end(); ++it) {
+        if (!visited[*it]) {
+            DFSUtil(*it, visited, visited_nodes);
+        }
+    }		
 }
 
