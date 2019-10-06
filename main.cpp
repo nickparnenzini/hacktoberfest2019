@@ -1,4 +1,4 @@
-#include "Graph.h"
+#include "UndirectedGraph.h"
 #include <iostream>
 
 int main() {

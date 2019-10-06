@@ -12,18 +12,16 @@ class Graph
 public:
     Graph() = default;
     Graph(int V);	
-	void BFS();
-	void DFS();
+	virtual void BFS();
+	virtual void DFS();
 	
 protected:
-    virtual addEdge(int u, int v) = 0;
+    virtual void addEdge(int u, int v) = 0;
+	void BFSUtil(int src);
+	void DFSUtil(int src, std::vector<bool>& visited, std::vector<int>& visited_nodes);
 
     int V; // number of nodes in the Graph
     std::unique_ptr<std::list<int>[]> adj_list;
-	
-private:
-    void BFSUtil(int src);
-	void DFSUtil(int src, std::vector<bool>& visited, std::vector<int>& visited_nodes);
 };
 
 #endif
