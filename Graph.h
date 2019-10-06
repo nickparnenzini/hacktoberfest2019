@@ -1,7 +1,7 @@
-
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include <list>
 #include <memory>
 
 class Graph
@@ -10,6 +10,7 @@ public:
     Graph() = default;
     Graph(int V);
     virtual addEdge(int u, int v) = 0;
+	
 
 protected:
     int V; // number of nodes in the Graph
